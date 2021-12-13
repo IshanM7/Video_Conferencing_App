@@ -1,0 +1,31 @@
+<div class="topnav">
+    <mat-icon class = "arrow" [routerLink]="'/'">arrow_back</mat-icon>
+    <input type="submit" value="Schedule Meeting" class="submitButton2" [routerLink] = "'/schedule-meeting'"/>
+    <input type="submit" value="Join Meeting" class="submitButton2" [routerLink] = "'/join-meeting'">
+    <input type="submit" value="Logout" class="submitButton2" [routerLink] = "'/'"/>
+</div>
+<br><br>
+<img src="assets\images\FinacleLogo.png" width="360" height="120" class="logo">
+<h1>Upcoming Meetings</h1>
+<table id="auctiondata">
+    <tr>
+        <th>Meeting ID</th>
+        <th>Meeting Name</th>
+        <th>Meeting Description</th>
+        <th>Meeting Time</th>
+        <th>Participants</th>
+        <th>Delete Meeting</th>
+    </tr>
+    <tr *ngFor="let meeting of meetings$ | async" (click)="meetingDetails(meeting.meetingID)">
+      <td *ngIf="meeting.meetingHost == id">{{ meeting.meetingID }}</td>
+      <td *ngIf="meeting.meetingHost == id">{{ meeting.meetingName }}</td>
+      <td *ngIf="meeting.meetingHost == id">{{ meeting.meetingDescription }}</td>
+      <td *ngIf="meeting.meetingHost == id">{{ meeting.time | date:'MM/dd/yyyy @ h:mma' }}</td>
+      <td *ngIf="meeting.meetingHost == id && meeting.numParticipants != 1000" style="text-align: center;">{{ meeting.numParticipants}}</td>
+      <td *ngIf="meeting.meetingHost == id && meeting.numParticipants == 1000" style="text-align: center;">No Limit</td>
+      <td *ngIf="meeting.meetingHost == id">
+        <mat-icon color = "warn" class="delete"(click)="deleteMeeting(meeting.meetingID)" style="margin-left: 50px">delete</mat-icon>
+      </td>
+    </tr>
+</table>
+

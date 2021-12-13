@@ -1,0 +1,26 @@
+<div class="topnav">
+  <input type="submit" value="Go Back" class="submitButton2" [routerLink] = "'/dashboard'"/>
+</div>
+
+<img src="assets/images/FinacleLogo.png" width="360" height="120" class="logo">
+
+<form [formGroup]="joinMeetingForm" (ngSubmit)="joinMeeting()" novalidate>
+
+
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "meetingLink" placeholder="Meeting Link">
+  </mat-form-field>
+
+  <br>
+  <button
+    color="primary"
+    [disabled]="!joinMeetingForm.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Join</span>
+  </button>
+</form>
+
+
+

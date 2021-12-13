@@ -1,0 +1,6 @@
+.delete{
+  color:crimson;
+}
+.delete:hover {
+  background-color:aqua;
+}

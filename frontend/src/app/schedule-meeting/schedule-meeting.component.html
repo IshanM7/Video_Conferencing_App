@@ -1,0 +1,82 @@
+<div class="topnav">
+  <input type="submit" value="Go Back" class="submitButton2" [routerLink] = "'/dashboard'"/>
+</div>
+
+<img src="assets\images\FinacleLogo.png" width="360" height="120" class="logo">
+
+<form [formGroup]="scheduleMeetingForm" (ngSubmit)="scheduleMeeting()" novalidate>
+
+  <table id="table">
+    <tr>
+      <td>
+        Name:
+      </td>
+      <td>
+        <mat-form-field appearance="standard">
+          <input matInput formControlName = "meetingName" placeholder="Meeting Name" class = "inputFields">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Description:
+      </td>
+      <mat-form-field appearance="standard">
+        <input matInput formControlName = "meetingDescription" placeholder="Meeting Description"  class = "inputFields">
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        Participants:
+      </td>
+      <td>
+        <mat-form-field appearance="standard">
+          <input matInput formControlName = "numParticipants" placeholder="Number of Participants"  type = "number" step = 1 min = 2 class = "inputFields">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-radio-group formControlName="checked">
+          <mat-radio-button value = "1"> No Limit </mat-radio-button>
+        </mat-radio-group>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Time:
+      </td>
+      <mat-form-field appearance="standard">
+        <input matInput type="datetime-local" id="meeting-time"
+        name="meeting-time" value="2018-06-12T19:30"
+        min="2021-06-07T00:00" class = "inputFields"
+        formControlName = "time" >
+      </mat-form-field>
+    </tr>
+  </table>
+
+
+  <br>
+  <button
+    color="primary"
+    [disabled]="!scheduleMeetingForm.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Schedule Meeting</span>
+  </button>
+</form>
+
+<!-- <mat-card *ngFor="let meeting of meetings$ | async">
+  <button *ngIf="meeting.meetingHost === id" mat-icon-button>
+    <mat-icon (click)="deleteMeeting(meeting.meetingID)" color="warn">delete</mat-icon>
+  </button>
+  <div class="post-title">
+    {{ meeting.meetingName }}
+  </div>
+  <div class="post-meta">
+    {{ meeting.meetingDescription}}
+  </div>
+  <div class="post-body">
+    {{ meeting.meetingTime }}
+  </div>
+</mat-card> -->
+

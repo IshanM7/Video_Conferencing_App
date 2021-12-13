@@ -1,0 +1,32 @@
+
+
+<h1>Sign Up</h1>
+
+<img src="assets\images\FinacleLogo.png" width="360" height="120" class="logo">
+
+
+<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "firstName" placeholder="First Name">
+  </mat-form-field>
+
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "lastName" placeholder="Last Name">
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "email" placeholder="Email">
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "password" placeholder="Password">
+  </mat-form-field>
+
+  <button
+    color="primary"
+    [disabled]="!signupForm.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Sign up</span>
+  </button>
+</form>

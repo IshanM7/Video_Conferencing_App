@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const ROOM_ID = "<%= roomId %>"
+    </script>
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src ="/socket.io/socket.io.js" defer></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src ="/script.js" defer></script>
+    <title>Document</title>
+    <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+#video-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);
+    grid-auto-rows: 300px;            
+}
+
+video {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+/* ----------------------------- */
+.options {
+    padding: 1rem;
+    display: flex;
+}
+.options__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    height: 50px;
+    border-radius: 5px;
+    color: var(--main-light);
+    font-size: 1.2rem;
+    width: 50px;
+    margin: 0 0.5rem;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar button {
+    /* float: left; */ 
+    font-size: 16px;
+    width:100%;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar button:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+button {
+    width: 33%;
+    background-color: #333;
+    border: none;
+    outline: none;
+}
+
+.right {
+    float: right;
+}
+:root {
+--rowHeight: 98vh;
+--colWidth: 98vw;
+}
+
+body{
+background: black;
+}
+
+.videos { 
+
+display: grid;
+grid-gap: 5px;
+grid-auto-flow: row;
+
+grid-template-columns: repeat(auto-fit, minmax(var(--colWidth), 1fr)) ;
+}
+
+.videoContainer {
+position: relative;
+overflow: hidden;
+
+min-height: var(--rowHeight);
+min-width: var(--colWidth);
+
+}
+
+.videoContainer video {
+
+position: absolute;
+left: 0;
+bottom: 0;
+height: auto;
+width: 100%;
+}
+
+.videoLabel {
+color: white;
+font: bold 18px Arial, Sans-Serif;
+line-height: 18px;
+height: 18px;
+
+background: rgba(0, 0, 0, 0.55);
+
+position: absolute;
+left: 0;
+bottom: 0;
+padding: 4px;
+}
+    </style>
+</head>
+<body>
+         
+    <div id="videos" class="videos">
+        <div id="video-grid"></div> 
+        
+    </div>
+            <!--<div id="video-grid"></div>-->
+
+    <div class="navbar">
+        <div class="options">
+
+            <div id = "mute" class = "options_button">
+    
+                <button class = "fa fa-microphone"></button>
+            </div>
+            <div id = "camera" class = "options_button">
+    
+                <button class = "fa fa-video-camera"></button>
+            </div>
+            <div id = "startScreenShare" class = "options_button">
+    
+                <button class = "fa fa-desktop"></button>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

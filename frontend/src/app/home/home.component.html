@@ -1,0 +1,25 @@
+<h1>Video Confrence Log In</h1>
+
+<img src="assets\images\FinacleLogo.png" width="360" height="120" class="logo">
+
+<form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "email" placeholder="Email" class="inputFields">
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <input matInput formControlName = "password" placeholder="Password" class="inputFields">
+  </mat-form-field>
+
+  <br>
+  <button
+    color="primary"
+    [disabled]="!loginForm.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Login</span>
+  </button>
+</form>
+
+<p><a [routerLink] = "'/signup'">Don't have account? Sign up!</a></p>

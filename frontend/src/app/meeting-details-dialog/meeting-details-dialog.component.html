@@ -1,0 +1,52 @@
+<div *ngIf="data.type=='name'">
+  <form [formGroup]="changeNameForm" (ngSubmit)="submitName()">
+
+    <h2 mat-dialog-title>Change Name</h2>
+    <input matInput formControlName = "meetingName" placeholder="New Meeting Name"  class = "inputFields">
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Exit</button>
+      <button mat-raised-button mat-dialog-close type="submit" color = "primary">Save</button>
+    </mat-dialog-actions>
+  </form>
+</div>
+
+<div *ngIf="data.type=='description'">
+  <form [formGroup]="changeDescriptionForm" (ngSubmit)="submitDescription()">
+
+    <h2 mat-dialog-title>Change Description</h2>
+    <input matInput formControlName = "meetingDescription" placeholder="New Meeting Description"  class = "inputFields">
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Exit</button>
+      <button mat-raised-button mat-dialog-close type="submit" color = "primary">Save</button>
+    </mat-dialog-actions>
+  </form>
+</div>
+
+<div *ngIf="data.type=='participants'">
+  <form [formGroup]="changeParticipationForm" (ngSubmit)="submitParticipation()">
+
+    <h2 mat-dialog-title>Change Number of Participants</h2>
+    <input matInput formControlName = "numParticipants" class = "inputFields" type="number" step=1 min=2>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Exit</button>
+      <button mat-raised-button mat-dialog-close type="submit" color = "primary">Save</button>
+    </mat-dialog-actions>
+  </form>
+</div>
+
+<div *ngIf="data.type=='time'">
+  <form [formGroup]="changeTimeForm" (ngSubmit)="submitTime()">
+
+    <h2 mat-dialog-title>Change Time</h2>
+    <mat-form-field appearance="standard">
+      <input matInput type="datetime-local" id="meeting-time"
+      name="meeting-time" value="2018-06-12T19:30"
+      min="2021-06-07T00:00" class = "inputFields"
+      formControlName = "time">
+    </mat-form-field>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Exit</button>
+      <button mat-raised-button mat-dialog-close type="submit" color = "primary">Save</button>
+    </mat-dialog-actions>
+  </form>
+</div>

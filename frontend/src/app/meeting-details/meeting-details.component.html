@@ -1,0 +1,42 @@
+<div class="topnav">
+  <input type="submit" value="Schedule Meeting" class="submitButton2" [routerLink] = "'/schedule-meeting'"/>
+  <input type="submit" value="Join Meeting" class="submitButton2" [routerLink] = "'/join-meeting'">
+  <input type="submit" value="Logout" class="submitButton2" [routerLink] = "'/'"/>
+</div>
+<div class = "center" *ngFor="let meeting of meetings$ | async">
+
+  <table id="auctiondata" *ngIf="meeting.meetingID == id">
+    <tr >
+      <td>Meeting Name:</td>
+      <td>{{ meeting.meetingName }}</td>
+      <td><button color = "primary" (click)="openDialog('changeName',meeting.meetingID)" mat-button>Change name</button></td>
+    </tr>
+    <tr >
+      <td>Meeting Description:</td>
+      <td>{{ meeting.meetingDescription}}</td>
+      <td><button color = "primary" (click)="openDialog('changeDescription',meeting.meetingID)" mat-button>Change description</button></td>
+    </tr>
+    <tr >
+      <td>Meeting Time:</td>
+      <td>{{ meeting.time | date:'MM/dd/yyyy @ h:mma'}}</td>
+      <td><button color = "primary" (click)="openDialog('changeTime',meeting.meetingID)" mat-button>Change time</button></td>
+    </tr>
+    <tr >
+      <td>Number of Participants:</td>
+      <td>{{ meeting.numParticipants}}</td>
+      <td><button color = "primary" (click)="openDialog('changeParticipation',meeting.meetingID)" mat-button>Change Participants</button></td>
+    </tr>
+    <tr>
+      <td>Meeting Link:</td>
+      <td>{{ meeting.meetingLink}}</td>
+      <td>
+        <button color = "primary" mat-button *ngIf="meeting.meetingID == id" [cdkCopyToClipboard]="meeting.meetingLink">Copy to clipboard</button>
+      </td>
+    </tr>
+  </table>
+  <button *ngIf="meeting.meetingID == id" mat-raised-button color = "primary" (click)="startMeeting(meeting.meetingID,meeting.meetingLink)">Start Meeting</button>
+
+
+
+
+</div>

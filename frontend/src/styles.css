@@ -1,0 +1,174 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body {
+  text-align: center;
+  background-color: white;
+}
+
+form {
+  margin: auto;
+  width:250px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+mat-toolbar{
+  display:flex;
+  justify-content: space-between;
+  padding: 0 64px;
+  top: 0;
+}
+.mat-toolbar.mat-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+#headingLittleTopMargin {
+  margin-top: 15px;
+}
+
+#horizontalButtons {
+  position: relative;
+  display: inline-block;
+}
+
+label {
+  font-family: Arial;
+  font-size: 12pt;
+  float: left
+}
+
+mat-form-field{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-color: black;
+  border: 1px;
+}
+
+.logo {
+  padding-bottom: 25px;
+  border-radius: 4px;
+}
+
+.logoSignUp {
+  padding-top: 75px;
+  padding-bottom: 25px;
+  border-radius: 4px;
+}
+
+.inputForm {
+  width: 100%;
+  padding: 12px 20px;
+  margin: -6px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-color: black;
+  border-style: solid;
+  border-width:1px;
+  font-size: 12pt;
+  font-family: Arial;
+}
+
+.submitButton {
+  width:70%;
+  border-radius: 4px;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 13pt 2pt;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #021e4a;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #46BAD1;
+  color: white;
+}
+
+#auctiondata {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#auctiondata td, #auctiondata th {
+  padding: 8px;
+}
+
+#auctiondata tr {
+  border-bottom: 1px solid #46BAD1;
+  text-align: left;
+}
+
+#auctiondata tr:nth-child(even){background-color: #f2f2f2;}
+
+#auctiondata tr:hover {background-color: #c1bdbd;}
+
+#auctiondata th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  /* background-color: #46BAD1; */
+  background-color: rgb(141, 141, 141);
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fill{
+  flex: 1 1 auto;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.submitButton2 {
+  width: 30%;
+  border-radius: 4px;
+  border: none;
+  padding: 16px -1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 16pt 0pt;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.submitButton2:hover {
+  background-color: black;
+}
+.arrow{
+  flex: bottom;
+}
